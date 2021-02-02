@@ -6,7 +6,7 @@ node {
   docker.build('demo')
  
   stage 'Docker push'
-  docker.withRegistry('https://hub.docker.com/repository/docker/saurabh1992/testing_jenkins', 'Dockerhub'){
+  docker.withRegistry('https://hub.docker.com', 'Dockerhub'){
 
   app.push("${env.BUILD_NUMBER}")            
   app.push("demo")        
